@@ -10,14 +10,6 @@
   @apply list-none;
 }
 
-.footnotes {
-  @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
-}
-
-.csl-entry {
-  @apply my-5;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
