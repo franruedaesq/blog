@@ -13,13 +13,13 @@ const LayoutWrapper = ({ children }) => {
       <div className="flex flex-col justify-between h-screen">
         <header className="flex items-center justify-between py-10">
           <div>
-            <Link href="/" aria-label="Tailwind CSS Blog">
+            <Link href="/" aria-label="Fran Rueda Blog">
               <div className="flex items-center justify-between">
                 {/* <div className="mr-3"> */}
                 {/* <Logo /> */}
                 {/* </div> */}
                 {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="font-sans hidden h-3 text-2xl font-extrabold sm:block leading-4">
+                  <div className="font-sans h-3 text-2xl font-extrabold sm:block leading-4">
                     {siteMetadata.headerTitle}
                   </div>
                 ) : (
