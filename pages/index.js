@@ -43,12 +43,12 @@ export default function Home({ posts }) {
                       </dd>
                     </dl> */}
                     <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
+                      <div className="space-y-4">
                         <div>
-                          <h2 className="text-3xl font-bold leading-8 tracking-tight ">
+                          <h2 className="text-3xl font-bold leading-8 tracking-tight mb-2">
                             <Link
                               href={`/blog/${slug}`}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 underline"
                             >
                               {title}
                             </Link>
