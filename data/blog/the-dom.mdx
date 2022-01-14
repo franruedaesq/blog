@@ -1,0 +1,63 @@
+---
+title: The DOM
+date: '2022-01-13'
+tags: ['Javascript', 'ECMAScript']
+draft: false
+summary: What is the DOM? When is created and How is it used?
+---
+
+## What is the DOM?
+
+The Document Object Model (DOM) is a Web API provided by the browser to efficiently render a webpage and expose it publicly for the developer to dynamically manipulate DOM elements for various purposes.
+
+The DOM represents a HTML document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree.
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Image alt="DOM Tree" src="/static/images/dom-tree.jpg" width={400} height={300} class="object-none object-center" />
+      </div>
+
+Using the DOM API, developers can add or remove HTML elements from a web page, change its appearance or bind event listeners. Using DOM API, HTML elements can be created or cloned in memory and manipulated without affecting the rendered DOM tree. This gives developers the ability to construct highly dynamic web page with rich user experience.
+
+> Note that the DOM is not JavaScript-specific and indeed has been implemented in numerous other languages. For web browsers, however, the DOM has been implemented using ECMAScript and now makes up a large part of the JavaScript language.
+
+## When and how the DOM is created?
+
+A page load begins when a user selects a hyperlink, submits a form, or types a URL in a browser.
+
+Then the browser sends a request to a server to fetch an HTML document, the server returns an HTML page in binary stream format which is basically a text file with the response header `Content-Type` set to the value `text/html; charset=UTF-8`.
+
+The browser reads the raw bytes of HTML, and translates them to individual characters based on specified encoding of the file (for example, UTF-8).
+
+Then the browser converts strings of characters into distinct tokens—as specified by the W3C HTML5 standard; for example, `<html>`, `<body>`—and other strings within angle brackets. Each token has a special meaning and its own set of rules. Whenever it encounters an HTML element like html, body, div etc., it creates a JavaScript object called a Node. Eventually, all HTML elements will be converted to JavaScript objects.
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Image alt="DOM Tree" src="/static/images/full-process.png" width={700} height={500} class="object-none object-center" />
+      </div>
+
+The final result of this process is the Document Object Model (DOM) of our web page.
+
+## The DOM is not what we see in the Devtool
+
+Devtool provide the closest aproximation of what is the DOM. Sometime the devtool includes pseudo-elements(::before, ::after) in the DOM, but pseudoelement are not part of the DOM.
+
+## The DOM is not the HTML
+
+The DOM can be modify by javascript: If we add a new element, the element is added by javascript to DOM and not in the HTML file.
+
+## The DOM is not what we see on the screen
+
+```HTML
+<p style="display: none;"> text </p>
+```
+
+In this case, the `<p>` element is in the DOM but not in the screen, the render tree is what we see in the screen, and it is the result of the DOM + CSSOM. The render tree only consist in what will be represented in the screen. DOM is not the same as Render Tree
