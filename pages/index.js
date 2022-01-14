@@ -43,22 +43,22 @@ export default function Home({ posts }) {
                       </dd>
                     </dl> */}
                     <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-4">
-                        <div>
-                          <h2 className="text-3xl font-bold leading-8 tracking-tight mb-2">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 underline"
-                            >
+                      <Link
+                        href={`/blog/${slug}`}
+                        className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                      >
+                        <div className="space-y-2">
+                          <div>
+                            <h2 className="text-3xl font-bold leading-8 tracking-tight mb-2 underline">
                               {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap leading-loose">
-                            <time dateTime={date}>{formatDate(date)}</time>
+                            </h2>
+                            <div className="flex flex-wrap leading-loose text-gray-900">
+                              <time dateTime={date}>{formatDate(date)}</time>
+                            </div>
                           </div>
+                          <div className="prose text-gray-500 dark:text-gray-400">{summary}</div>
                         </div>
-                        <div className="prose text-gray-500 dark:text-gray-400">{summary}</div>
-                      </div>
+                      </Link>
                       {/* <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
