@@ -1,0 +1,98 @@
+---
+title: Semantic HTML- Document Sections
+date: '2022-03-29'
+tags: ['HTML', 'accessibility']
+draft: false
+summary: Document sections are a way to divide content into logical sections, which can be navigated by keyboard users.
+---
+
+Semantic HTML makes it clear to the browser what the meaning of a document and its content is. It is important to use semantic elements to convey meaning rather than for presentation purposes.
+
+These are some HTML elements that we must use to structure out HTML document:
+
+### `<article>`
+
+> The [article](https://html.spec.whatwg.org/#the-article-element) element represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable. [_HTML Standard_](https://html.spec.whatwg.org/)
+
+Our html document can have many sections, many pieces. For example forum post, blog entry, magazine articles, widgets or any other independent item of content. The `<article>` element is independent, if we took this pieces out of our document it could be its own document and still make sense. The article element contains independent content that does not require any other context.
+
+It is important to look at our document and decide if a specific section of the document matches the meaning of an article element.
+
+### `<section>`
+
+> The [section](https://html.spec.whatwg.org/multipage/sections.html#the-section-element) element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading. [_HTML Standard_](https://html.spec.whatwg.org/)
+
+This means that all the content inside a section element should be related to each other thematically. A section is just a thematic grouping and no necessary make sense on its own.
+
+We can use this element to split a document into sections like presentation, contact Information, skills, projects, etc and each of these sections can be in a different `<section>` element.
+
+### `<aside>`
+
+> The [aside](https://html.spec.whatwg.org/multipage/sections.html#the-aside-element) element represents a section of a page that consists of content that is tangentially related to the content around the [aside](https://html.spec.whatwg.org/multipage/sections.html#the-aside-element) element, and which could be considered separate from that content. [_HTML Standard_](https://html.spec.whatwg.org/)
+
+The **aside** element is use to display text _aside_ from the main text, this can be additional information that can enhance an article but isn’t necessarily key to understanding it.
+
+The aside element can be used to display:
+
+- Fun facts
+- Author details for an article
+- Supporting external links
+- Suggestions
+
+An aside element can be used to enhance a document with additional information. Asides are non-essential as part of an article but when used correctly it can be an extra level of information for our content.
+
+## Headings
+
+### `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>` and `<6>` elements
+
+> These elements represent headings for their sections. [_HTML Standard_](https://html.spec.whatwg.org/)
+
+> Heading content defines the header of a section (whether explicitly marked up using sectioning content elements, or implied by the heading content itself). [_HTML Standard_](https://html.spec.whatwg.org/)
+
+> These elements have a rank given by the number in their name. The [h1](https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) element is said to have the highest rank, the [h6](https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) element has the lowest rank, and two elements with the same name have equal rank. [_HTML Standard_](https://html.spec.whatwg.org/)
+
+Headings create an outline for the document.
+
+The `<h1>` describes the page as a whole and we should typically have only one `<h1>` in the document. Headings `<h2>`  through `<h6>`  represent increasing degrees of "indentation" so it does not make sense to skip heading levels. It is possible to skip ranks when closing a subsection, for instance, a `<h2>`  beginning a new section, can follow an `<h4>`  as it closes the previous section.
+
+### `<hgroup>`
+
+> The [hgroup](https://html.spec.whatwg.org/#the-hgroup-element) element represents the heading of a section, which consists of all the [h1](https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements)–[h6](https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) element children of the [hgroup](https://html.spec.whatwg.org/#the-hgroup-element) element. The element is used to group a set of [h1](https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements)–[h6](https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) elements when the heading has multiple levels, such as subheadings, alternative titles, or taglines. [_HTML Standard_](https://html.spec.whatwg.org/)
+
+`<hgroup>` acts as a wrapper for one or more related heading elements possibly contained within a `<header>` element but it can be used on its own. It can *only* contain a group of `<h1>`–`<h6>` element(s), and it should be used for subtitles, alternative titles, and tag lines.
+
+### `<header>` and `<footer>`
+
+> _A [header](https://html.spec.whatwg.org/#the-header-element) element is intended to usually contain the section's heading (an [h1-h6](https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) element or an [hgroup](https://html.spec.whatwg.org/#the-hgroup-element) element), but this is not required. The [header](https://html.spec.whatwg.org/#the-header-element) element can also be used to wrap a section's table of contents, a search form, or any relevant logos. [HTML Standard](https://html.spec.whatwg.org/)_
+
+> The [footer](https://html.spec.whatwg.org/#the-footer-element) element represents a footer for its nearest ancestor sectioning content or sectioning root element. A footer usually contains information about its section such as who wrote it, links to related documents, copyright data, and the like. [_HTML Standard_](https://html.spec.whatwg.org/)
+
+A `<header>` element typically contains the site, article or section heading, but can also contain other content, such as a search form or relevant logos.
+
+The `<footer>` element represents a footer for its nearest ancestor and contains info such as author, copyright, related info.
+
+Each section can have its own `<header>` and` <footer>` element, allowing us to add multiple semantic elements in a single web page.
+
+A `<header>` and a `<footer>` elements can be used multiple times within a single document.
+
+```html
+<body>
+  <section>
+    <header>...</header>
+    <footer>...</footer>
+  </section>
+
+  <section>
+    <header>...</header>
+    <footer>...</footer>
+  </section>
+</body>
+```
+
+### Semantic HTML and Accessibility
+
+There are many users that depend on a screen reader software to navigate the internet. When a screen reader, or any sort of assistive device scans a web page, it gets information about the Document Object Model (DOM), or the HTML structure of the page. So it is importante to make sure that screen readers can read each HTML element, and that each of them can be accessed through the keyboard.
+
+### Resources
+
+HTML Specifications: [https://html.spec.whatwg.org/](https://html.spec.whatwg.org/)
