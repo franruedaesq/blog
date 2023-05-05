@@ -36,13 +36,13 @@ In this example, the paragraph element is used to group together sentences that 
 </div>
 ```
 
-In this example, the paragraph element is used to group together three sentences that all discuss the same topic: the shape of the earth. However, the sentences are not really related to each other in a way that requires them to be grouped together in a paragraph. This makes the text harder to read and understand, and the use of a **`<div>`** element with a class of "article" would have been more appropriate for this type of content.
+In this example, the paragraph element is used to group together three sentences that all discuss the same topic: the shape of the earth. However, the sentences are not really related to each other in a way that requires them to be grouped together in a paragraph. This makes the text harder to read and understand, and the use of a <div> element with a class of "article" would have been more appropriate for this type of content.
 
 ## Quotes
 
-The blockquote element
+blockquote element
 
-> The [blockquote](https://html.spec.whatwg.org/#the-blockquote-element) element [represents](https://html.spec.whatwg.org/#represents) a section that is quoted from another source.
+> The `[blockquote](https://html.spec.whatwg.org/#the-blockquote-element)` element [represents](https://html.spec.whatwg.org/#represents) a section that is quoted from another source.
 
 ```jsx
 <blockquote>
@@ -51,17 +51,11 @@ The blockquote element
 <p>— Robert Stephen</p>
 ```
 
-1. The **`<blockquote>`** element can be used to quote text from any source, including books, articles, speeches, or interviews.
-2. The content inside the **`<blockquote>`** element should be quoted verbatim, meaning it should be an exact copy of the original text, including any spelling or grammatical errors.
-3. It's a good practice to include the author or source of the quote using the **`<cite>`** element inside the **`<blockquote>`** element. This helps to provide proper attribution for the quote and gives credit to the original author.
-4. The **`<blockquote>`** element is typically styled with indentation, a border, or some other visual cue to set it apart from the rest of the text on the page.
-5. The **`<blockquote>`** element is often used in conjunction with the **`<q>`** element, which is used to indicate a shorter inline quotation.
-
 ## List
 
 The li element
 
-> The [li](https://html.spec.whatwg.org/#the-li-element) element [represents](https://html.spec.whatwg.org/#represents) a list item. If its parent element is an [ol](https://html.spec.whatwg.org/#the-ol-element), [ul](https://html.spec.whatwg.org/#the-ul-element), or [menu](https://html.spec.whatwg.org/#the-menu-element) element, then the element is an item of the parent element's list, as defined for those elements. Otherwise, the list item has no defined list-related relationship to any other [li](https://html.spec.whatwg.org/#the-li-element) element.
+> The `[li](https://html.spec.whatwg.org/#the-li-element)` element [represents](https://html.spec.whatwg.org/#represents) a list item. If its parent element is an `[ol](https://html.spec.whatwg.org/#the-ol-element)`, `[ul](https://html.spec.whatwg.org/#the-ul-element)`, or `[menu](https://html.spec.whatwg.org/#the-menu-element)` element, then the element is an item of the parent element's list, as defined for those elements. Otherwise, the list item has no defined list-related relationship to any other `[li](https://html.spec.whatwg.org/#the-li-element)` element.
 
 ```jsx
 <ol reverse>
@@ -75,13 +69,13 @@ The li element
 
 ul element
 
-> The [ul](https://html.spec.whatwg.org/#the-ul-element) element [represents](https://html.spec.whatwg.org/#represents) a list of items, where the order of the items is not important — that is, where changing the order would not materially change the meaning of the document.
+> The `[ul](https://html.spec.whatwg.org/#the-ul-element)` element [represents](https://html.spec.whatwg.org/#represents) a list of items, where the order of the items is not important — that is, where changing the order would not materially change the meaning of the document.
 
 ## Ordered Lists
 
 ol element
 
-> The [ol](https://html.spec.whatwg.org/#the-ol-element) element [represents](https://html.spec.whatwg.org/#represents) a list of items, where the items have been intentionally ordered, such that changing the order would change the meaning of the document.
+> The `[ol](https://html.spec.whatwg.org/#the-ol-element)` element [represents](https://html.spec.whatwg.org/#represents) a list of items, where the items have been intentionally ordered, such that changing the order would change the meaning of the document.
 
 The `reversed` attribute is a [boolean attribute](https://html.spec.whatwg.org/#boolean-attribute). If present, it indicates that the list is a descending list (..., 3, 2, 1). If the attribute is omitted, the list is an ascending list (1, 2, 3, ...).
 
@@ -102,7 +96,7 @@ I first lived there):</p>
 
 It includes de elements: dl, dt and dd
 
-> The [dl](https://html.spec.whatwg.org/#the-dl-element) element [represents](https://html.spec.whatwg.org/#represents) an association list consisting of zero or more name-value groups (a description list).
+> The `[dl](https://html.spec.whatwg.org/#the-dl-element)` element [represents](https://html.spec.whatwg.org/#represents) an association list consisting of zero or more name-value groups (a description list).
 
 The **`dl`** element in HTML represents a description list. A description list is a list of terms and their corresponding descriptions.
 
@@ -134,9 +128,9 @@ It's worth noting that the **`dl`** element can also contain **`dd`** elements t
 
 the table element
 
-> The [table](https://html.spec.whatwg.org/#the-table-element) element [represents](https://html.spec.whatwg.org/#represents) data with more than one dimension, in the form of a [table](https://html.spec.whatwg.org/#concept-table).
+> The `[table](https://html.spec.whatwg.org/#the-table-element)` element [represents](https://html.spec.whatwg.org/#represents) data with more than one dimension, in the form of a [table](https://html.spec.whatwg.org/#concept-table).
 
-> The [table](https://html.spec.whatwg.org/#the-table-element) element takes part in the [table model](https://html.spec.whatwg.org/#table-model). Tables have rows, columns, and cells given by their descendants. The rows and columns form a grid; a table's cells must completely cover that grid without overlap.
+> The `[table](https://html.spec.whatwg.org/#the-table-element)` element takes part in the [table model](https://html.spec.whatwg.org/#table-model). Tables have rows, columns, and cells given by their descendants. The rows and columns form a grid; a table's cells must completely cover that grid without overlap.
 
 The **`table`** element in HTML is used to represent tabular data on a web page, such as a spreadsheet or a database table. It is a container element that can contain other HTML elements such as **`thead`**, **`tbody`**, **`tfoot`**, **`tr`**, **`td`**, and **`th`**.
 
