@@ -1,0 +1,239 @@
+---
+title: Semantic HTML- Grouping Things
+date: '2023-05-05'
+tags: ['HTML', 'accessibility']
+draft: false
+summary: This article covers HTML elements used for organizing content on a web page and emphasizes the importance of using semantically meaningful elements.
+---
+
+In web development, it's important to use semantic HTML elements to structure the content on web pages. Semantic HTML elements provide a way to describe the meaning of content on a web page, which can improve the accessibility and organization of the content for users and assistive technologies. In this article, we'll explore some of the most common semantic HTML elements for grouping content, including paragraphs, quotes, lists, associations lists, tables, and more. By using these elements properly, you can create web pages that are easier to understand, navigate, and interact with for all users.
+
+## Paragraphs
+
+The P element represent a paragraph
+
+> A paragraph is typically a run of [phrasing content](https://html.spec.whatwg.org/#phrasing-content-2) that forms a block of text with one or more **sentences that discuss a particular topic**, as in typography, but can also be used for more **general thematic grouping**. For instance, an address is also a paragraph, as is a part of a form, a byline, or a stanza in a poem.
+
+## Quotes
+
+blockquote element
+
+> The `[blockquote](https://html.spec.whatwg.org/#the-blockquote-element)` element [represents](https://html.spec.whatwg.org/#represents) a section that is quoted from another source.
+
+```jsx
+<blockquote>
+ <p>[Jane] then said she liked [...] fish.</p>
+</blockquote>
+<p>— Robert Stephen</p>
+```
+
+## List
+
+The li element
+
+> The `[li](https://html.spec.whatwg.org/#the-li-element)` element [represents](https://html.spec.whatwg.org/#represents) a list item. If its parent element is an `[ol](https://html.spec.whatwg.org/#the-ol-element)`, `[ul](https://html.spec.whatwg.org/#the-ul-element)`, or `[menu](https://html.spec.whatwg.org/#the-menu-element)` element, then the element is an item of the parent element's list, as defined for those elements. Otherwise, the list item has no defined list-related relationship to any other `[li](https://html.spec.whatwg.org/#the-li-element)` element.
+
+```jsx
+<ol reverse>
+ <li>Item 1
+ <li value="3">Item 3
+ <li>Item 4
+</ol>
+```
+
+## Unordered Lists
+
+ul element
+
+> The `[ul](https://html.spec.whatwg.org/#the-ul-element)` element [represents](https://html.spec.whatwg.org/#represents) a list of items, where the order of the items is not important — that is, where changing the order would not materially change the meaning of the document.
+
+## Ordered Lists
+
+ol element
+
+> The `[ol](https://html.spec.whatwg.org/#the-ol-element)` element [represents](https://html.spec.whatwg.org/#represents) a list of items, where the items have been intentionally ordered, such that changing the order would change the meaning of the document.
+
+The `reversed` attribute is a [boolean attribute](https://html.spec.whatwg.org/#boolean-attribute). If present, it indicates that the list is a descending list (..., 3, 2, 1). If the attribute is omitted, the list is an ascending list (1, 2, 3, ...).
+
+The `start` attribute, if present, must be a [valid integer](https://html.spec.whatwg.org/#valid-integer). It is used to determine the [starting value](https://html.spec.whatwg.org/#concept-ol-start) of the list.
+
+```jsx
+<p>I have lived in the following countries (given in the order of when
+I first lived there):</p>
+<ol>
+ <li>Switzerland
+ <li>United Kingdom
+ <li>United States
+ <li>Norway
+</ol>
+```
+
+## Associations Lists
+
+It includes de elements: dl, dt and dd
+
+> The `[dl](https://html.spec.whatwg.org/#the-dl-element)` element [represents](https://html.spec.whatwg.org/#represents) an association list consisting of zero or more name-value groups (a description list).
+
+The **`dl`** element in HTML represents a description list. A description list is a list of terms and their corresponding descriptions.
+
+The **`dl`** element contains a series of **`dt`** (description term) and **`dd`** (description definition) elements. The **`dt`** element represents a term in the list, and the **`dd`** element represents the corresponding definition for that term.
+
+Here's an example of how these elements might be used in a description list:
+
+```jsx
+<dl>
+  <dt>HTML</dt>
+  <dd>Hypertext Markup Language is a standard markup language used to create web pages.</dd>
+  <dt>CSS</dt>
+  <dd>
+    Cascading Style Sheets is a stylesheet language used to describe the look and formatting of a
+    document written in HTML.
+  </dd>
+  <dt>JavaScript</dt>
+  <dd>
+    JavaScript is a programming language that is commonly used to add interactivity to web pages.
+  </dd>
+</dl>
+```
+
+Using the **`dl`**, **`dt`**, and **`dd`** elements is a semantically correct way to represent a description list in HTML. This can make it easier for web browsers, search engines, and assistive technologies (such as screen readers) to understand and process the content of the list.
+
+It's worth noting that the **`dl`** element can also contain **`dd`** elements that are not preceded by a **`dt`** element. This can be used to create a list of descriptions where the terms are not explicitly defined, or where the terms are implied by the context of the list.
+
+## Multidimensional Content
+
+the table element
+
+> The `[table](https://html.spec.whatwg.org/#the-table-element)` element [represents](https://html.spec.whatwg.org/#represents) data with more than one dimension, in the form of a [table](https://html.spec.whatwg.org/#concept-table).
+
+> The `[table](https://html.spec.whatwg.org/#the-table-element)` element takes part in the [table model](https://html.spec.whatwg.org/#table-model). Tables have rows, columns, and cells given by their descendants. The rows and columns form a grid; a table's cells must completely cover that grid without overlap.
+
+The **`table`** element in HTML is used to represent tabular data on a web page, such as a spreadsheet or a database table. It is a container element that can contain other HTML elements such as **`thead`**, **`tbody`**, **`tfoot`**, **`tr`**, **`td`**, and **`th`**.
+
+The **`thead`** element represents the head of the table, which typically includes the column titles or headings. It should be used to wrap the **`tr`** element that contains the headings of the table.
+
+The **`tbody`** element represents the body of the table, which typically includes the rows of data. It should be used to wrap the **`tr`** elements that contain the rows of data in the table.
+
+The **`tfoot`** element represents the foot of the table, which typically includes summary or supplementary information about the table. It should be used to wrap the **`tr`** element that contains the footer information for the table.
+
+The **`tr`** element represents a row in the table. It should be used to wrap the **`td`** or **`th`** elements that represent the cells of the row.
+
+The **`td`** element represents a cell in the table that contains data. It should be used within a **`tr`** element to represent a cell in a row of the table.
+
+The **`th`** element represents a cell in the table that contains a heading. It should be used within a **`tr`** element to represent a heading cell in a row of the table.
+
+It's important to use these elements properly in order to create semantically correct HTML. Using these elements correctly can also make it easier for web browsers, search engines, and assistive technologies (such as screen readers) to understand and process the content of the table.
+
+Here's an example of how you might use these elements to create a simple HTML table:
+
+```jsx
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John Smith</td>
+      <td>john@example.com</td>
+      <td>555-555-1212</td>
+    </tr>
+    <tr>
+      <td>Jane Doe</td>
+      <td>jane@example.com</td>
+      <td>555-555-1212</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">Total: 2</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+This table would have three columns (Name, Email, Phone) and two rows of data (John Smith and Jane Doe). The **`thead`** element contains the column names, the **`tbody`** element contains the data rows, and the **`tfoot`** element contains a summary row that spans all three columns.d
+
+## Dominant Content
+
+the main element
+
+he **`main`** element in HTML represents the main content of a document or a section of a document. The **`main`** element is intended to contain the central content of the document, and to exclude content that is repeated across multiple pages (such as a header, footer, or navigation menu).
+
+The **`main`** element should not be used to wrap content that is repeated across multiple pages, as this can create problems for search engines and assistive technologies. Instead, such content should be placed in separate, dedicated elements (such as a **`header`** or **`footer`** element).
+
+Here's an example of how the **`main`** element might be used in an HTML document:
+
+```jsx
+<body>
+  <header>
+    <h1>My Site</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Welcome to My Site</h2>
+    <p>This is the main content of my site.</p>
+    <p>Here you will find information about my services and products.</p>
+  </main>
+  <footer>
+    <p>Copyright 2021 My Site</p>
+  </footer>
+</body>
+```
+
+In this example, the **`main`** element contains the central content of the document (the heading and paragraphs), while the **`header`** and **`footer`** elements contain content that is repeated across multiple pages (the site logo, navigation menu, and copyright notice).
+
+Using the **`main`** element is a semantically correct way to identify the main content of a document or a section of a document. This can make it easier for search engines and assistive technologies to understand and process the content of the page.
+
+It's worth noting that the **`main`** element should not be used more than once in a single document. If a document has multiple sections of main content, each section should be wrapped in a separate element (such as a **`section`** or **`article`** element).
+
+## div
+
+The **`div`** element in HTML is a generic container element that can be used to wrap any type of content. While the **`div`** element is widely used on the web, it is considered a "presentational" element, meaning that it is used to define the layout or appearance of the content rather than the meaning or structure of the content.
+
+As a result, the **`div`** element should generally be avoided in favor of more semantically meaningful elements, such as **`header`**, **`footer`**, **`main`**, **`article`**, **`section`**, and **`aside`**. These elements convey more information about the content they contain, and can make it easier for search engines and assistive technologies to understand and process the content of the page.
+
+Here's an example of how the **`div`** element might be used to wrap content:
+
+```jsx
+<div>
+  <h2>Welcome to My Site</h2>
+  <p>This is the main content of my site.</p>
+  <p>Here you will find information about my services and products.</p>
+</div>
+```
+
+In this example, the **`div`** element is used to wrap the heading and paragraphs, but it does not convey any information about the meaning or purpose of the content.
+
+Instead of using a **`div`** element, it would be more semantically correct to use a more specific element that conveys the meaning or purpose of the content. For example:
+
+```jsx
+<main>
+  <h2>Welcome to My Site</h2>
+  <p>This is the main content of my site.</p>
+  <p>Here you will find information about my services and products.</p>
+</main>
+```
+
+In this revised example, the **`main`** element is used to wrap the content, and conveys that the content represents the main content of the document.
+
+It's worth noting that there may be cases where the **`div`** element is necessary or appropriate. For example, if you need to apply a specific style to a group of elements, or if you need to create a custom layout using CSS, the **`div`** element can be useful. However, in general, it is best to use more specific, semantically meaningful elements whenever possible.
+
+### Resources
+
+HTML Specifications: [https://html.spec.whatwg.org/](https://html.spec.whatwg.org/)
